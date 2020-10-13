@@ -63,18 +63,18 @@ public class Directorio {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
 
-    public Set<String> buscarClientes(String ciudad) {
+    public Set<Cliente> buscarClientes(String ciudad) {
         System.out.println("\n");
-        HashSet<String> clientesxCiudad=new HashSet<>();
+        HashSet<Cliente> clientesxCiudad=new HashSet<>();
 
         Set<Long> claves = listaClientes.keySet();
 
         for (Long it : claves) {
             if (listaClientes.get(it).getCiudad() == ciudad) {
-                clientesxCiudad.add(listaClientes.get(it).getApellido());
+                clientesxCiudad.add(listaClientes.get(it));
             }
         }
-        System.out.println("Los clientes por ciudad son: "+clientesxCiudad);    
+        System.out.println("Los clientes por ciudad son: "+clientesxCiudad.toString());    
         return clientesxCiudad;
     }
 
